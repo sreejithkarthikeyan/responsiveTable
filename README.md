@@ -1,4 +1,4 @@
-# responsiveTable
+# responsiveTable - for boostrap library Users
 
 
 
