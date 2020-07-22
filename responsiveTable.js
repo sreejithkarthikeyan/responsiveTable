@@ -16,10 +16,9 @@
 */
 
 (function () {
-    this.responsiveTable  = function (e) {
 
+    this.responsiveTable = function (e) {
 
- 
         var options;
         var tableList = [];
         var cardList = [];
@@ -34,14 +33,10 @@
             this.options = extendDefaults(defaults, arguments[0]);
         }
 
-
         init(this.options);
         window.addEventListener("resize", resizeEvent);
 
-
-
     }
-
 
     function extendDefaults(source, properties) {
         var property;
@@ -129,7 +124,7 @@
 
 
 
-        
+
 
 
         resizeTable();
@@ -148,7 +143,7 @@
 
             this.tableList.push(_table);
             this.cardList.push(_card);
-           
+
         }
 
     }
@@ -164,17 +159,11 @@
         let cardBody = document.createElement('div');
         cardBody.className = 'card-content';
 
-        let cardHead = document.createElement('div');
-        cardHead.className = 'card-header';
-
-        let title = document.createElement('h5');
-
-        title.innerText = "heading _" + ind;
-        title.className = 'card-title';
+       
 
         let tableData = document.createElement('div');
         let codeBlock;
-    
+
         for (var a = 0; a < _tableBody_Array.length; a++) {
 
             for (var b = 0; b < _tableBody_Array[a].length; b++) {
@@ -189,7 +178,7 @@
                     '</div></div>';
 
                 tableData.innerHTML += codeBlock;
-             
+
 
             }
 
@@ -200,37 +189,36 @@
 
 
 
-        cardHead.appendChild(title);
-        card.appendChild(cardHead);
+      
         cardBody.appendChild(tableData);
         card.appendChild(cardBody);
 
 
         return card;
-  
+
     }
-    
+
     function resizeEvent(e) {
 
-            resizeTable()
-        }
+        resizeTable()
+    }
 
-        function resizeTable() {
+    function resizeTable() {
 
 
 
-            if ($('body').width() < 768) {
-                for (i = 0; i < this.tableList.length; i++) {
-                    this.tableList[i].style.display = "none";
-                    this.cardList[i].style.display = "block";
-                }
-            } else {
-                for (j = 0; j < this.tableList.length; j++) {
-                    this.tableList[j].style.display = "table";
-                    this.cardList[j].style.display = "none";
-                }
+        if ($('body').width() < 768) {
+            for (i = 0; i < this.tableList.length; i++) {
+                this.tableList[i].style.display = "none";
+                this.cardList[i].style.display = "block";
+            }
+        } else {
+            for (j = 0; j < this.tableList.length; j++) {
+                this.tableList[j].style.display = "table";
+                this.cardList[j].style.display = "none";
             }
         }
+    }
 
     function detectMob() {
         const toMatch = [
